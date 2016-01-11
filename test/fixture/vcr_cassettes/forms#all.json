@@ -1,0 +1,18 @@
+[
+  {
+    "request": {
+      "body": "\"\"",
+      "headers": {
+        "User-agent": "Elixir Client",
+        "X-ApiToken": "-"
+      },
+      "method": "get",
+      "options": [],
+      "request_body": "",
+      "url": "https://api.fulcrumapp.com/api/v2/forms.json"
+    },
+    "response": {
+      "body": "{\"forms\": [{\"name\": \"Fire Hydrant Inventory\",\"description\": \"Inventory of fire hydrant structures.\"}]}"
+    }
+  }
+]

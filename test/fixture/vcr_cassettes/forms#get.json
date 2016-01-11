@@ -1,0 +1,38 @@
+[
+  {
+    "request": {
+      "body": "",
+      "headers": {
+        "Content-Type": "application/json; charset=utf-8",
+        "Accept": "application/json",
+        "User-Agent": "Elixir Client",
+        "X-ApiToken": "-"
+      },
+      "method": "get",
+      "options": [],
+      "request_body": "",
+      "url": "https://api.fulcrumapp.com/api/v2/forms/e6340e99-9b62-4dc4-850f-6d7724d00b10.json"
+    },
+    "response": {
+      "body": "{\"form\":{\"name\":\"TrainAssess\",\"description\":\"Train assessment\",\"bounding_box\":[0,0,0,0],\"record_title_key\":\"9fa7\",\"title_field_keys\":[\"9fa7\"],\"status_field\":{\"type\":\"StatusField\",\"label\":\"Status\",\"key\":\"@status\",\"data_name\":\"status\",\"default_value\":\"\",\"enabled\":false,\"read_only\":false,\"hidden\":false,\"description\":\"\",\"choices\":[],\"required\":false,\"disabled\":false},\"auto_assign\":false,\"hidden_on_dashboard\":false,\"record_count\":0,\"geometry_types\":[\"Point\"],\"geometry_required\":false,\"id\":\"e6340e99-9b62-4dc4-850f-6d7724d00b10\",\"created_at\":\"2016-01-08T12:38:42Z\",\"updated_at\":\"2016-01-08T12:38:42Z\",\"image\":null,\"image_thumbnail\":null,\"image_small\":null,\"image_large\":null,\"elements\":[{\"type\":\"TextField\",\"key\":\"9fa7\",\"label\":\"Train assessment\",\"description\":null,\"required\":false,\"disabled\":false,\"hidden\":false,\"data_name\":\"train_assessment\",\"default_value\":null,\"visible_conditions_type\":null,\"visible_conditions\":null,\"required_conditions_type\":null,\"required_conditions\":null,\"numeric\":false,\"pattern\":null,\"pattern_description\":null,\"min_length\":null,\"max_length\":null}]}}",
+      "headers": {
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "Content-Type": "application/json; charset=utf-8",
+        "Date": "Mon, 11 Jan 2016 19:51:56 GMT",
+        "ETag": "W/\"2aa7645487c701612a596db10dd74ac3\"",
+        "Server": "nginx",
+        "Status": "200 OK",
+        "Vary": "Accept-Encoding, Accept, Authorization, Cookie, X-ApiToken",
+        "X-Request-Id": "558e090b-58ba-4653-a074-f19168b374a4",
+        "X-Runtime": "0.037143",
+        "X-Served-By": "ff111a54de53d7a9bb57f3d20db99f5a5e19dd1c",
+        "X-Served-By-Proxy": "ff111a54de53d7a9bb57f3d20db99f5a5e19dd1c",
+        "X-Served-By-Proxy-Group": "main",
+        "Content-Length": "1079",
+        "Connection": "keep-alive"
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  }
+]

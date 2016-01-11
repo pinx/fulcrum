@@ -1,0 +1,38 @@
+[
+  {
+    "request": {
+      "body": "{\"name\":\"TestForm\",\"id\":null,\"elements\":[{\"type\":\"TextField\",\"required\":false,\"label\":\"ID Tag\",\"key\":\"2832\",\"hidden\":false,\"disabled\":false,\"description\":\"Enter the asset tag ID.\",\"default_value\":\"\",\"data_name\":\"id_tag\"}],\"description\":\"Test description\"}",
+      "headers": {
+        "Content-Type": "application/json; charset=utf-8",
+        "Accept": "application/json",
+        "User-Agent": "Elixir Client",
+        "X-ApiToken": "-"
+      },
+      "method": "post",
+      "options": [],
+      "request_body": "",
+      "url": "https://api.fulcrumapp.com/api/v2/forms.json"
+    },
+    "response": {
+      "body": "{\"form\":{\"name\":\"TestForm\",\"description\":\"Test description\",\"bounding_box\":[0,0,0,0],\"record_title_key\":null,\"title_field_keys\":[],\"status_field\":{},\"auto_assign\":false,\"hidden_on_dashboard\":false,\"record_count\":0,\"geometry_types\":[\"Point\"],\"geometry_required\":false,\"id\":\"432ad041-f0fe-43e1-b276-8ce883eff027\",\"created_at\":\"2016-01-11T21:03:00Z\",\"updated_at\":\"2016-01-11T21:03:00Z\",\"image\":null,\"image_thumbnail\":null,\"image_small\":null,\"image_large\":null,\"elements\":[{\"type\":\"TextField\",\"key\":\"2832\",\"label\":\"ID Tag\",\"description\":\"Enter the asset tag ID.\",\"required\":false,\"disabled\":false,\"hidden\":false,\"data_name\":\"id_tag\",\"default_value\":null,\"visible_conditions_type\":null,\"visible_conditions\":null,\"required_conditions_type\":null,\"required_conditions\":null,\"numeric\":false,\"pattern\":null,\"pattern_description\":null,\"min_length\":null,\"max_length\":null}]}}",
+      "headers": {
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "Content-Type": "application/json; charset=utf-8",
+        "Date": "Mon, 11 Jan 2016 21:03:00 GMT",
+        "ETag": "W/\"b0c05691f1d598a394092e0a5bb1ed5d\"",
+        "Server": "nginx",
+        "Status": "201 Created",
+        "Vary": "Accept-Encoding, Accept, Authorization, Cookie, X-ApiToken",
+        "X-Request-Id": "18c946b5-49a8-43b9-ac01-8dd0164d9aa2",
+        "X-Runtime": "0.198029",
+        "X-Served-By": "ff111a54de53d7a9bb57f3d20db99f5a5e19dd1c",
+        "X-Served-By-Proxy": "ff111a54de53d7a9bb57f3d20db99f5a5e19dd1c",
+        "X-Served-By-Proxy-Group": "main",
+        "Content-Length": "863",
+        "Connection": "keep-alive"
+      },
+      "status_code": 201,
+      "type": "ok"
+    }
+  }
+]
