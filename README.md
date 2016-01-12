@@ -2,15 +2,13 @@
 
 Fulcrum library for Elixir.
 
-The aim is to present the Fulcrum API as an alternative to the Ecto Repo.
+The aim is to present the Fulcrum API as a replacement for the Ecto Repo.
 
 So, instead of Repo.all(Form), you can write Fulcrum.all(Form). In this way, you only have to make minor changes to your controllers, to work with Fulcrum.
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed as:
-
-  1. Add fulcrum to your list of dependencies in `mix.exs`:
+Add fulcrum to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
@@ -18,7 +16,7 @@ def deps do
 end
 ```
 
-  2. Ensure fulcrum is started before your application:
+Ensure fulcrum is started before your application:
 
 ```elixir
 def application do
@@ -26,7 +24,7 @@ def application do
 end
 ```
 
-  3. Add your Fulcrum api-key to your config file
+Add your Fulcrum api-key to your config file
 
 ```elixir
 use Mix.Config
@@ -36,7 +34,7 @@ use Mix.Config
 
 ## Usage
 
-The following resources are available:
+The following resources are available (checked ones have been implemented):
 
   - [ ] Users (only "all")
   - [x] Forms
@@ -48,6 +46,10 @@ The following resources are available:
 The following functions are implemented:
   - [x] all/1
   - [x] get!/1
+  - [ ] get/1
   - [x] insert!/2
+  - [ ] insert/2
   - [ ] update!/2
+  - [ ] update/2
   - [ ] delete!/1
+  - [ ] delete/1

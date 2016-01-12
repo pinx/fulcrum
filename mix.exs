@@ -7,12 +7,11 @@ defmodule Fulcrum.Mixfile do
      elixir: "~> 1.2",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
+     description: description,
+     package: package,
      deps: deps]
   end
 
-  # Configuration for the OTP application
-  #
-  # Type "mix help compile.app" for more information
   def application do
     [applications: [
       :httpoison,
@@ -21,15 +20,6 @@ defmodule Fulcrum.Mixfile do
       :logger]]
   end
 
-  # Dependencies can be Hex packages:
-  #
-  #   {:mydep, "~> 0.3.0"}
-  #
-  # Or git/path repositories:
-  #
-  #   {:mydep, git: "https://github.com/elixir-lang/mydep.git", tag: "0.1.0"}
-  #
-  # Type "mix help deps" for more examples and options
   defp deps do
     [
       {:httpoison, "~> 0.8"},
@@ -37,5 +27,22 @@ defmodule Fulcrum.Mixfile do
       {:meck, "~> 0.8", only: :test},
       {:exvcr, "~> 0.7", only: :test}
     ]
+  end
+
+  defp description do
+    """
+    Fulcrum library for Elixir.
+    The aim is to present the Fulcrum API as a replacement for an Ecto Repo.
+    So, instead of Repo.all(Form), you can write Fulcrum.all(Form).
+    In this way, you only have to make minor changes to your controllers, to work with Fulcrum.
+    """
+  end
+
+  defp package do
+    [# These are the default files included in the package
+     files: ["lib", "priv", "mix.exs", "README*", "readme*", "LICENSE*", "license*"],
+     maintainers: ["Marcel van Pinxteren"],
+     licenses: ["MIT"],
+     links: %{"GitHub" => "https://github.com/pinx/fulcrum"}]
   end
 end
