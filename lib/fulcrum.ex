@@ -38,18 +38,30 @@ defmodule Fulcrum do
     Application.get_env(:fulcrum, :endpoint)
   end
 
+  defp from_model(resource) when is_map(resource) do
+    resource.__struct__
+    |> extract_name
+  end
+
   defp from_model(resource) do
-    resource = if is_map(resource), do: resource.__struct__, else: resource
-    [ _ | resource ] = String.split(Mix.Utils.underscore(resource), "/")
-    "#{resource}"
+    resource
+    |> extract_name
+  end
+
+  defp extract_name(resource) do
+    resource
+    |> Mix.Utils.underscore
+    |> String.split("/")
+    |> List.last
+    |> to_string
   end
 
   defp resource_path(resource) do
-    "/#{pluralize(resource)}"
+    "/" <> pluralize(resource)
   end
 
   defp pluralize(resource) do
-    "#{resource}s"
+    resource <> "s"
   end
 
   defp atomize(string_key_list) when is_list(string_key_list) do

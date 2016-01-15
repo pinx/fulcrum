@@ -1,0 +1,38 @@
+[
+  {
+    "request": {
+      "body": "{\"project_id\":null,\"id\":null,\"form_values\":{\"628b\":\"undefined\"},\"form_id\":\"03e616bd-d6e6-4973-84e3-a3ed805407e3\"}",
+      "headers": {
+        "Content-Type": "application/json; charset=utf-8",
+        "Accept": "application/json",
+        "User-Agent": "Elixir Client",
+        "X-ApiToken": "7e87edaea594ab28b6ee8b8c3cbc8429453ff4cad37b06caefb948c66f1d48cfad272b011bd411fb"
+      },
+      "method": "post",
+      "options": [],
+      "request_body": "",
+      "url": "https://api.fulcrumapp.com/api/v2/records.json"
+    },
+    "response": {
+      "body": "{\"record\":{\"status\":null,\"version\":1,\"id\":\"d5628f2a-36cb-46b6-b325-dfc3b832d3a3\",\"created_at\":\"2016-01-15T11:21:08Z\",\"updated_at\":\"2016-01-15T11:21:08Z\",\"client_created_at\":\"2016-01-15T11:21:08Z\",\"client_updated_at\":\"2016-01-15T11:21:08Z\",\"created_by\":\"Gé-Jé Overschie\",\"created_by_id\":\"4b26d246-0e3e-4453-9ea3-f087952b3340\",\"updated_by\":\"Gé-Jé Overschie\",\"updated_by_id\":\"4b26d246-0e3e-4453-9ea3-f087952b3340\",\"form_id\":\"03e616bd-d6e6-4973-84e3-a3ed805407e3\",\"project_id\":null,\"assigned_to\":null,\"assigned_to_id\":null,\"form_values\":{\"628b\":\"undefined\"},\"latitude\":null,\"longitude\":null,\"altitude\":null,\"speed\":null,\"course\":null,\"horizontal_accuracy\":null,\"vertical_accuracy\":null}}",
+      "headers": {
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "Content-Type": "application/json; charset=utf-8",
+        "Date": "Fri, 15 Jan 2016 11:21:08 GMT",
+        "ETag": "W/\"59170f1a8a0b96f8afe0b3def10d0d93\"",
+        "Server": "nginx",
+        "Status": "201 Created",
+        "Vary": "Accept-Encoding, Accept, Authorization, Cookie, X-ApiToken",
+        "X-Request-Id": "c68d7457-d81e-4d56-ad9e-b79ccfbc4bf5",
+        "X-Runtime": "0.107439",
+        "X-Served-By": "ff111a54de53d7a9bb57f3d20db99f5a5e19dd1c",
+        "X-Served-By-Proxy": "ff111a54de53d7a9bb57f3d20db99f5a5e19dd1c",
+        "X-Served-By-Proxy-Group": "main",
+        "Content-Length": "687",
+        "Connection": "keep-alive"
+      },
+      "status_code": 201,
+      "type": "ok"
+    }
+  }
+]

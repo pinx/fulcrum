@@ -1,0 +1,38 @@
+[
+  {
+    "request": {
+      "body": "",
+      "headers": {
+        "Content-Type": "application/json; charset=utf-8",
+        "Accept": "application/json",
+        "User-Agent": "Elixir Client",
+        "X-ApiToken": "7e87edaea594ab28b6ee8b8c3cbc8429453ff4cad37b06caefb948c66f1d48cfad272b011bd411fb"
+      },
+      "method": "get",
+      "options": [],
+      "request_body": "",
+      "url": "https://api.fulcrumapp.com/api/v2/records/7611ba4e-ccdb-4d66-96ad-306c526468d3.json"
+    },
+    "response": {
+      "body": "{\"record\":{\"status\":null,\"version\":2,\"id\":\"7611ba4e-ccdb-4d66-96ad-306c526468d3\",\"created_at\":\"2015-11-25T23:17:23Z\",\"updated_at\":\"2015-11-25T23:18:54Z\",\"client_created_at\":\"2015-11-25T23:17:19Z\",\"client_updated_at\":\"2015-11-25T23:18:50Z\",\"created_by\":\"Gé-Jé Overschie\",\"created_by_id\":\"4b26d246-0e3e-4453-9ea3-f087952b3340\",\"updated_by\":\"Gé-Jé Overschie\",\"updated_by_id\":\"4b26d246-0e3e-4453-9ea3-f087952b3340\",\"form_id\":\"03e616bd-d6e6-4973-84e3-a3ed805407e3\",\"project_id\":\"bb11ea7d-cb91-4e77-a340-038ce6127aa5\",\"assigned_to\":null,\"assigned_to_id\":null,\"form_values\":{\"628b\":\"undefined\",\"91b1\":{\"other_values\":[],\"choice_values\":[\"barrijtuig\"]}},\"latitude\":51.9858935,\"longitude\":5.9045604,\"altitude\":null,\"speed\":null,\"course\":null,\"horizontal_accuracy\":1100.0,\"vertical_accuracy\":null}}",
+      "headers": {
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "Content-Type": "application/json; charset=utf-8",
+        "Date": "Fri, 15 Jan 2016 11:13:07 GMT",
+        "ETag": "W/\"c1f134e5ccb12f9c58f48d5fdb7992c7\"",
+        "Server": "nginx",
+        "Status": "200 OK",
+        "Vary": "Accept-Encoding, Accept, Authorization, Cookie, X-ApiToken",
+        "X-Request-Id": "4f1e42b8-3f22-428a-8ae4-ca4e35d5119a",
+        "X-Runtime": "0.032367",
+        "X-Served-By": "ff111a54de53d7a9bb57f3d20db99f5a5e19dd1c",
+        "X-Served-By-Proxy": "ff111a54de53d7a9bb57f3d20db99f5a5e19dd1c",
+        "X-Served-By-Proxy-Group": "main",
+        "Content-Length": "792",
+        "Connection": "keep-alive"
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  }
+]
