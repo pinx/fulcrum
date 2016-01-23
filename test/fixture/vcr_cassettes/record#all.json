@@ -6,7 +6,7 @@
         "Content-Type": "application/json; charset=utf-8",
         "Accept": "application/json",
         "User-Agent": "Elixir Client",
-        "X-ApiToken": "7e87edaea594ab28b6ee8b8c3cbc8429453ff4cad37b06caefb948c66f1d48cfad272b011bd411fb"
+        "X-ApiToken": "-"
       },
       "method": "get",
       "options": [],
