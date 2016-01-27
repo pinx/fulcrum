@@ -12,6 +12,7 @@ defmodule Fulcrum do
     # Logger.debug(inspect response)
     Poison.Parser.parse!(response.body)[pluralize(resource)]
     |> atomize
+    |> to_model(model)
   end
 
   def get!(model, id) do
@@ -20,6 +21,7 @@ defmodule Fulcrum do
     {:ok, response} = HTTPoison.get endpoint <> path, headers
     Poison.Parser.parse!(response.body)[resource]
     |> atomize
+    |> to_model(model)
     # Poison.decode!(response.body, as: model)
   end
 
@@ -33,9 +35,27 @@ defmodule Fulcrum do
     # Poison.decode!(response.body, as: model)
   end
 
+  def delete!(model) do
+    resource = from_model(model)
+    id = model.id
+    path = "#{resource_path(resource)}/#{id}.json"
+    response = HTTPoison.delete! endpoint <> path, headers
+    Poison.Parser.parse!(response.body)[resource]
+    |> atomize
+    # Poison.decode!(response.body, as: model)
+  end
+
 
   defp endpoint do
     Application.get_env(:fulcrum, :endpoint)
+  end
+
+  defp to_model(list, model) when is_list(list) do
+    for item <- list, into: [], do: to_model(item, model)
+  end
+
+  defp to_model(map, model) when is_map(map) do
+    Map.put(map, :__struct__, model)
   end
 
   defp from_model(resource) when is_map(resource) do

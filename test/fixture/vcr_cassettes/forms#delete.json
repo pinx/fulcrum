@@ -1,0 +1,41 @@
+[
+  {
+    "request": {
+      "body": "",
+      "headers": {
+        "Content-Type": "application/json; charset=utf-8",
+        "Accept": "application/json",
+        "User-Agent": "Elixir Client",
+        "X-ApiToken": "-"
+      },
+      "method": "delete",
+      "options": [],
+      "request_body": "",
+      "url": "https://api.fulcrumapp.com/api/v2/forms/b77aec00-ebca-4b97-b2c9-51728c36061e.json"
+    },
+    "response": {
+      "body": "{\"form\":{\"name\":\"testform\",\"description\":null,\"bounding_box\":[0,0,0,0],\"record_title_key\":null,\"title_field_keys\":[],\"status_field\":{},\"auto_assign\":false,\"hidden_on_dashboard\":false,\"record_count\":0,\"geometry_types\":[\"Point\"],\"geometry_required\":false,\"id\":\"b77aec00-ebca-4b97-b2c9-51728c36061e\",\"created_at\":\"2016-01-27T14:16:59Z\",\"updated_at\":\"2016-01-27T14:16:59Z\",\"image\":null,\"image_thumbnail\":null,\"image_small\":null,\"image_large\":null,\"elements\":[{\"type\":\"TextField\",\"key\":\"test element\",\"label\":\"test element\",\"description\":null,\"required\":false,\"disabled\":false,\"hidden\":false,\"data_name\":\"test\",\"default_value\":null,\"visible_conditions_type\":null,\"visible_conditions\":null,\"required_conditions_type\":null,\"required_conditions\":null,\"numeric\":false,\"pattern\":null,\"pattern_description\":null,\"min_length\":null,\"max_length\":null}]}}",
+      "headers": {
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "Content-Type": "application/json; charset=utf-8",
+        "Date": "Wed, 27 Jan 2016 17:25:35 GMT",
+        "ETag": "W/\"1484a536c97acf2f98f21bd1ad336770\"",
+        "Server": "nginx",
+        "Status": "200 OK",
+        "Vary": "Accept-Encoding, Accept, Authorization, Cookie, X-ApiToken",
+        "X-Rate-Limit-Limit": "5000",
+        "X-Rate-Limit-Remaining": "4997",
+        "X-Rate-Limit-Reset": "1453918740",
+        "X-Request-Id": "094dab65-dbe2-49a0-848f-6420b3d5fd6c",
+        "X-Runtime": "1.034023",
+        "X-Served-By": "ff111a54de53d7a9bb57f3d20db99f5a5e19dd1c",
+        "X-Served-By-Proxy": "ff111a54de53d7a9bb57f3d20db99f5a5e19dd1c",
+        "X-Served-By-Proxy-Group": "main",
+        "Content-Length": "840",
+        "Connection": "keep-alive"
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  }
+]

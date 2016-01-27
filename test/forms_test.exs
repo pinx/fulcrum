@@ -3,6 +3,8 @@ defmodule Fulcrum.FormTest do
   use ExVCR.Mock, adapter: ExVCR.Adapter.Hackney
   alias Fulcrum.Form
 
+  require Logger
+
   doctest Fulcrum.Form
 
   setup_all do
@@ -20,6 +22,7 @@ defmodule Fulcrum.FormTest do
     use_cassette "forms#get" do
       form = Fulcrum.get!(Form, "e6340e99-9b62-4dc4-850f-6d7724d00b10")
       assert String.length(form.name) > 0
+      assert to_string(form.__struct__) =~ ~r/Form$/
     end
   end
 
@@ -38,6 +41,14 @@ defmodule Fulcrum.FormTest do
     		}]}
       form = Fulcrum.insert!(form)
       assert form.name == "TestForm"
+    end
+  end
+
+  test "delete!/1" do
+    use_cassette "forms#delete" do
+      form = %Form{id: "b77aec00-ebca-4b97-b2c9-51728c36061e" }
+      resp_form = Fulcrum.delete!(form)
+      assert resp_form.id == "b77aec00-ebca-4b97-b2c9-51728c36061e"
     end
   end
 end
