@@ -9,20 +9,14 @@ defmodule Fulcrum do
     resource = from_model(model)
     path = "#{resource_path(resource)}.json"
     {:ok, response} = HTTPoison.get endpoint <> path, headers
-    # Logger.debug(inspect response)
-    Poison.Parser.parse!(response.body)[pluralize(resource)]
-    |> atomize
-    |> to_model(model)
+    to_model(response, model, pluralize(resource))
   end
 
   def get!(model, id) do
     resource = from_model(model)
     path = "#{resource_path(resource)}/#{id}.json"
     {:ok, response} = HTTPoison.get endpoint <> path, headers
-    Poison.Parser.parse!(response.body)[resource]
-    |> atomize
-    |> to_model(model)
-    # Poison.decode!(response.body, as: model)
+    to_model(response, model, resource)
   end
 
   def insert!(model) do
@@ -30,19 +24,26 @@ defmodule Fulcrum do
     path = "#{resource_path(resource)}.json"
     body = Poison.encode!(model)
     {:ok, response} = HTTPoison.post endpoint <> path, body, headers
-    Poison.Parser.parse!(response.body)[resource]
-    |> atomize
-    # Poison.decode!(response.body, as: model)
+    to_model(response, model, resource)
+  end
+
+  def update!(model) do
+    resource = from_model(model)
+    path = "#{resource_path(resource)}/#{model.id}.json"
+    body = Poison.encode!(model)
+    {:ok, response} = HTTPoison.put endpoint <> path, body, headers
+    to_model(response, model, resource)
   end
 
   def delete!(model) do
+    delete!(model.__struct__, model.id)
+  end
+
+  def delete!(model, id) do
     resource = from_model(model)
-    id = model.id
     path = "#{resource_path(resource)}/#{id}.json"
     response = HTTPoison.delete! endpoint <> path, headers
-    Poison.Parser.parse!(response.body)[resource]
-    |> atomize
-    # Poison.decode!(response.body, as: model)
+    to_model(response, model, resource)
   end
 
 
@@ -50,12 +51,18 @@ defmodule Fulcrum do
     Application.get_env(:fulcrum, :endpoint)
   end
 
-  defp to_model(list, model) when is_list(list) do
+  defp to_model(response, model, resource) do
+    Poison.Parser.parse!(response.body)[resource]
+    |> atomize
+    |> to_model(model)
+  end
+
+  defp to_model(list, model) when is_list(list) and is_atom(model) do
     for item <- list, into: [], do: to_model(item, model)
   end
 
   defp to_model(map, model) when is_map(map) do
-    Map.put(map, :__struct__, model)
+    struct(model, map)
   end
 
   defp from_model(resource) when is_map(resource) do

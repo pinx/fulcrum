@@ -4,7 +4,7 @@
       "body": "\"\"",
       "headers": {
         "User-agent": "Elixir Client",
-        "X-ApiToken": "-"
+        "X-ApiToken": "FULCRUM_API_KEY"
       },
       "method": "get",
       "options": [],

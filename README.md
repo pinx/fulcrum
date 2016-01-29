@@ -47,9 +47,14 @@ The following functions are implemented:
   - [x] all/1
   - [x] get!/1
   - [ ] get/1
-  - [x] insert!/2
-  - [ ] insert/2
-  - [ ] update!/2
-  - [ ] update/2
-  - [ ] delete!/1
+  - [x] insert!/1
+  - [ ] insert/1
+  - [x] update!/1
+  - [ ] update/1
+  - [x] delete!/1
+  - [x] delete!/2
   - [ ] delete/1
+
+## Credits
+
+[Fabriquartz] (https://github.com/Fabriquartz)

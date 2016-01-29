@@ -6,7 +6,7 @@
         "Content-Type": "application/json; charset=utf-8",
         "Accept": "application/json",
         "User-Agent": "Elixir Client",
-        "X-ApiToken": "-"
+        "X-ApiToken": "FULCRUM_API_KEY"
       },
       "method": "get",
       "options": [],

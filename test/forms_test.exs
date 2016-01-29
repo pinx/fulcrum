@@ -44,9 +44,27 @@ defmodule Fulcrum.FormTest do
     end
   end
 
+  test "update!/1" do
+    use_cassette "forms#update" do
+      form = Fulcrum.get!(Form, "e6340e99-9b62-4dc4-850f-6d7724d00b10")
+      form = Map.put(form, :description, "Updated description")
+      form = Fulcrum.update!(form)
+      assert form.description == "Updated description"
+    end
+  end
+
   test "delete!/1" do
     use_cassette "forms#delete" do
-      form = %Form{id: "b77aec00-ebca-4b97-b2c9-51728c36061e" }
+      id = "b77aec00-ebca-4b97-b2c9-51728c36061e"
+      resp_form = Fulcrum.delete!(Form, id)
+      assert resp_form.id == "b77aec00-ebca-4b97-b2c9-51728c36061e"
+    end
+  end
+
+  test "delete!/2" do
+    use_cassette "forms#delete2" do
+      id = "b77aec00-ebca-4b97-b2c9-51728c36061e"
+      form = Fulcrum.get!(Form, id)
       resp_form = Fulcrum.delete!(form)
       assert resp_form.id == "b77aec00-ebca-4b97-b2c9-51728c36061e"
     end
