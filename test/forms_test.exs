@@ -13,7 +13,7 @@ defmodule Fulcrum.FormTest do
 
   test "all/1" do
     use_cassette "forms#all" do
-      forms = Fulcrum.all(Form)
+      forms = Fulcrum.all(Form, api_key: "asdf")
       assert Enum.count(forms) > 0
     end
   end
@@ -56,7 +56,7 @@ defmodule Fulcrum.FormTest do
   test "delete!/1" do
     use_cassette "forms#delete" do
       id = "b77aec00-ebca-4b97-b2c9-51728c36061e"
-      resp_form = Fulcrum.delete!(Form, id)
+      resp_form = Fulcrum.delete!(%Fulcrum.Form{id: id})
       assert resp_form.id == "b77aec00-ebca-4b97-b2c9-51728c36061e"
     end
   end
