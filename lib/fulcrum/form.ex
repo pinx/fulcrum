@@ -1,17 +1,20 @@
 defmodule Fulcrum.Form do
-  @derive [Poison.Encoder]
-  defstruct [:id, :name, :description, :elements]
-
-  def from_json(json) do
-    Poison.Parser.parse!(json)
-    |> atomize
-  end
-
-  defp atomize(string_key_list) when is_list(string_key_list) do
-    for item <- string_key_list, into: [], do: atomize(item)
-  end
-
-  defp atomize(string_key_map) do
-    for {key, val} <- string_key_map, into: %{}, do: {String.to_atom(key), val}
-  end
+  # @derive [Poison.Encoder]
+  defstruct name:  nil,
+    elements: nil,
+    id: nil,
+    description: nil,
+    bounding_box: nil,
+    record_title_key: nil,
+    title_field_keys: nil,
+    status_field: nil,
+    auto_assign: false,
+    record_count: 0,
+    created_at: nil,
+    updated_at: nil,
+    image: nil,
+    image_thumbnail: nil,
+    image_small: nil,
+    image_large: nil
 end
+
