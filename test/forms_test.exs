@@ -3,8 +3,6 @@ defmodule Fulcrum.FormTest do
   use ExVCR.Mock, adapter: ExVCR.Adapter.Hackney
   alias Fulcrum.Form
 
-  require Logger
-
   doctest Fulcrum.Form
 
   setup_all do
@@ -13,7 +11,14 @@ defmodule Fulcrum.FormTest do
 
   test "all/1" do
     use_cassette "forms#all" do
-      forms = Fulcrum.all(Form, api_key: "asdf")
+      forms = Fulcrum.all(Form)
+      assert Enum.count(forms) > 0
+    end
+  end
+
+  test "all/2" do
+    use_cassette "forms#all" do
+      forms = Fulcrum.all(Form, api_key: "some-other-key")
       assert Enum.count(forms) > 0
     end
   end
@@ -23,6 +28,7 @@ defmodule Fulcrum.FormTest do
       form = Fulcrum.get!(Form, "e6340e99-9b62-4dc4-850f-6d7724d00b10")
       assert String.length(form.name) > 0
       assert to_string(form.__struct__) =~ ~r/Form$/
+      assert form.auto_assign == true
     end
   end
 
