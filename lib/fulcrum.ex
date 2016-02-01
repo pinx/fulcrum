@@ -122,9 +122,13 @@ defmodule Fulcrum do
   end
 
   defp to_model(response, model, resource) do
-    Poison.Parser.parse!(response.body)[resource]
-    |> atomize
-    |> to_model(model)
+    case String.strip(response.body) do
+      "" -> nil
+      body ->
+        Poison.Parser.parse!(body)[resource]
+        |> atomize
+        |> to_model(model)
+    end
   end
 
   defp to_model(list, model) when is_list(list) and is_atom(model) do
