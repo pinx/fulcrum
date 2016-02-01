@@ -14,7 +14,7 @@ defmodule Fulcrum do
     form = Fulcrum.all(Form)
   """
   def all(model, opts \\ []) do
-    resource = from_model(model)
+    resource = resource_name(model)
     path = "#{resource_path(resource)}.json"
     {:ok, response} = HTTPoison.get endpoint <> path, headers(opts)
     to_model(response, model, pluralize(resource))
@@ -35,7 +35,7 @@ defmodule Fulcrum do
     form = Fulcrum.get!(Form, "<UUID from Fulcrum>")
   """
   def get!(model, id, opts \\ []) do
-    resource = from_model(model)
+    resource = resource_name(model)
     path = "#{resource_path(resource)}/#{id}.json"
     {:ok, response} = HTTPoison.get endpoint <> path, headers(opts)
     to_model(response, model, resource)
@@ -58,9 +58,9 @@ defmodule Fulcrum do
     form = Fulcrum.insert!(%Form{id: "<UUID from Fulcrum>", ...}, [api_key: "<api_key>"])
   """
   def insert!(model, opts \\ []) do
-    resource = from_model(model)
+    resource = resource_name(model)
     path = "#{resource_path(resource)}.json"
-    body = Poison.encode!(model)
+    body = to_json(model)
     {:ok, response} = HTTPoison.post endpoint <> path, body, headers(opts)
     to_model(response, model, resource)
   end
@@ -83,9 +83,9 @@ defmodule Fulcrum do
     form = Fulcrum.update!(%Form{id: "<UUID from Fulcrum>", ...}, [api_key: "<api_key>"])
   """
   def update!(model, opts \\ []) do
-    resource = from_model(model)
+    resource = resource_name(model)
     path = "#{resource_path(resource)}/#{model.id}.json"
-    body = Poison.encode!(model)
+    body = to_json(model)
     {:ok, response} = HTTPoison.put endpoint <> path, body, headers(opts)
     to_model(response, model, resource)
   end
@@ -105,15 +105,20 @@ defmodule Fulcrum do
     form = Fulcrum.delete!(%Form{id: "<UUID from Fulcrum>"), [api_key: "<api_key>"])
   """
   def delete!(model, opts \\ []) do
-    resource = from_model(model)
+    resource = resource_name(model)
     path = "#{resource_path(resource)}/#{model.id}.json"
     response = HTTPoison.delete! endpoint <> path, headers(opts)
     to_model(response, model, resource)
   end
 
+  def from_json(model, json) do
+    map = Poison.Parser.parse!(json)
+      |> atomize
+    struct(model, map)
+  end
 
-  defp endpoint do
-    Application.get_env(:fulcrum, :endpoint)
+  def to_json(model) do
+    "{\"#{resource_name(model)}\":#{Poison.encode!(model)}}"
   end
 
   defp to_model(response, model, resource) do
@@ -130,12 +135,16 @@ defmodule Fulcrum do
     struct(model, map)
   end
 
-  defp from_model(resource) when is_map(resource) do
+  defp resource_path(resource) do
+    "/" <> pluralize(resource)
+  end
+
+  defp resource_name(resource) when is_map(resource) do
     resource.__struct__
     |> extract_name
   end
 
-  defp from_model(resource) do
+  defp resource_name(resource) do
     resource
     |> extract_name
   end
@@ -148,10 +157,6 @@ defmodule Fulcrum do
     |> to_string
   end
 
-  defp resource_path(resource) do
-    "/" <> pluralize(resource)
-  end
-
   defp pluralize(resource) do
     resource <> "s"
   end
@@ -162,6 +167,10 @@ defmodule Fulcrum do
 
   defp atomize(string_key_map) do
     for {key, val} <- string_key_map, into: %{}, do: {String.to_atom(key), val}
+  end
+
+  defp endpoint do
+    Application.get_env(:fulcrum, :endpoint)
   end
 
   defp headers(opts) do
