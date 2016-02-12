@@ -1,0 +1,38 @@
+[
+  {
+    "request": {
+      "body": "",
+      "headers": {
+        "Content-Type": "application/json; charset=utf-8",
+        "Accept": "application/json",
+        "User-Agent": "Elixir Client",
+        "X-ApiToken": "FULCRUM_API_KEY"
+      },
+      "method": "get",
+      "options": [],
+      "request_body": "",
+      "url": "https://api.fulcrumapp.com/api/v2/memberships.json"
+    },
+    "response": {
+      "body": "{\"memberships\":[{\"id\":\"xxxxxx-45f8-4d43-9051-55d25d4afd8c\",\"created_at\":\"2015-11-10T21:28:45Z\",\"updated_at\":\"2015-11-10T21:28:45Z\",\"gravatar_email\":\"someone@example.nl\",\"gravatar_image_url\":\"\",\"user_id\":\"xxxxxxxx-0e3e-4453-9ea3-f087952b3340\",\"user\":\"Test user\",\"email\":\"tester@example.nl\",\"role_id\":\"df3fa729-35bf-4e57-bad2-ec393a15b0d4\"}],\"current_page\":1,\"total_pages\":1,\"total_count\":2,\"per_page\":20000}",
+      "headers": {
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "Content-Type": "application/json; charset=utf-8",
+        "Date": "Fri, 12 Feb 2016 11:01:07 GMT",
+        "ETag": "W/\"feb6009b079e4c5b72d72d8a394b4b36\"",
+        "Server": "nginx",
+        "Status": "200 OK",
+        "Vary": "Accept-Encoding, Accept, Authorization, Cookie, X-ApiToken",
+        "X-Request-Id": "d62f4bb5-5cc5-4eab-ad19-72449577020c",
+        "X-Runtime": "0.056989",
+        "X-Served-By": "ff111a54de53d7a9bb57f3d20db99f5a5e19dd1c",
+        "X-Served-By-Proxy": "ff111a54de53d7a9bb57f3d20db99f5a5e19dd1c",
+        "X-Served-By-Proxy-Group": "main",
+        "Content-Length": "1008",
+        "Connection": "keep-alive"
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  }
+]
