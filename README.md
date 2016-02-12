@@ -37,6 +37,7 @@ use Mix.Config
 The following resources are available (checked ones have been implemented):
 
   - [ ] Users (only "all")
+  - [x] Memberships (only "all")
   - [x] Forms
   - [x] Records
   - [ ] Choice Lists
