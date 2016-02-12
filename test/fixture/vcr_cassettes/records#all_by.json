@@ -1,0 +1,38 @@
+[
+  {
+    "request": {
+      "body": "",
+      "headers": {
+        "Content-Type": "application/json; charset=utf-8",
+        "Accept": "application/json",
+        "User-Agent": "Elixir Client",
+        "X-ApiToken": "FULCRUM_API_KEY"
+      },
+      "method": "get",
+      "options": [],
+      "request_body": "",
+      "url": "https://api.fulcrumapp.com/api/v2/records.json?form_id=03e616bd-d6e6-4973-84e3-a3ed805407e3"
+    },
+    "response": {
+      "body": "{\"records\":[{\"status\":null,\"version\":2,\"id\":\"7611ba4e-ccdb-4d66-96ad-306c526468d3\",\"created_at\":\"2015-11-25T23:17:23Z\",\"updated_at\":\"2015-11-25T23:18:54Z\",\"client_created_at\":\"2015-11-25T23:17:19Z\",\"client_updated_at\":\"2015-11-25T23:18:50Z\",\"created_by\":\"Gé-Jé Overschie\",\"created_by_id\":\"4b26d246-0e3e-4453-9ea3-f087952b3340\",\"updated_by\":\"Gé-Jé Overschie\",\"updated_by_id\":\"4b26d246-0e3e-4453-9ea3-f087952b3340\",\"form_id\":\"03e616bd-d6e6-4973-84e3-a3ed805407e3\",\"project_id\":\"bb11ea7d-cb91-4e77-a340-038ce6127aa5\",\"assigned_to\":null,\"assigned_to_id\":null,\"form_values\":{\"628b\":\"undefined\",\"91b1\":{\"other_values\":[],\"choice_values\":[\"barrijtuig\"]}},\"latitude\":51.9858935,\"longitude\":5.9045604,\"altitude\":null,\"speed\":null,\"course\":null,\"horizontal_accuracy\":1100.0,\"vertical_accuracy\":null},{\"status\":null,\"version\":1,\"id\":\"bc323eb5-1165-49e3-982c-d5d1c153a99e\",\"created_at\":\"2015-12-04T09:54:26Z\",\"updated_at\":\"2015-12-04T09:54:26Z\",\"client_created_at\":\"2015-12-04T09:54:23Z\",\"client_updated_at\":\"2015-12-04T09:54:23Z\",\"created_by\":\"Gé-Jé Overschie\",\"created_by_id\":\"4b26d246-0e3e-4453-9ea3-f087952b3340\",\"updated_by\":\"Gé-Jé Overschie\",\"updated_by_id\":\"4b26d246-0e3e-4453-9ea3-f087952b3340\",\"form_id\":\"03e616bd-d6e6-4973-84e3-a3ed805407e3\",\"project_id\":\"5bb2890e-f1b3-4637-b9f1-5cab31ac9bb5\",\"assigned_to\":null,\"assigned_to_id\":null,\"form_values\":{\"628b\":\"undefined\",\"8747\":\"yes\",\"a651\":\"yes\",\"b1cd\":\"yes\",\"a3ab\":\"yes\",\"2473\":\"yes\",\"62cf\":\"yes\",\"78ae\":\"yes\",\"f658\":\"yes\",\"91b1\":{\"other_values\":[],\"choice_values\":[\"barrijtuig\"]},\"e12f\":\"yes\",\"a497\":\"yes\",\"c061\":\"yes\",\"889b\":\"yes\",\"9c9c\":\"yes\",\"58a1\":\"yes\",\"d24f\":\"yes\"},\"latitude\":51.9823671,\"longitude\":5.8983143,\"altitude\":null,\"speed\":null,\"course\":null,\"horizontal_accuracy\":166.253,\"vertical_accuracy\":null},{\"status\":null,\"version\":3,\"id\":\"328db625-fd01-48e9-b5ea-091ec55ddd80\",\"created_at\":\"2015-11-25T23:20:07Z\",\"updated_at\":\"2015-12-04T11:09:15Z\",\"client_created_at\":\"2015-11-25T23:20:03Z\",\"client_updated_at\":\"2015-12-04T11:09:13Z\",\"created_by\":\"Gé-Jé Overschie\",\"created_by_id\":\"4b26d246-0e3e-4453-9ea3-f087952b3340\",\"updated_by\":\"Gé-Jé Overschie\",\"updated_by_id\":\"4b26d246-0e3e-4453-9ea3-f087952b3340\",\"form_id\":\"03e616bd-d6e6-4973-84e3-a3ed805407e3\",\"project_id\":\"5bb2890e-f1b3-4637-b9f1-5cab31ac9bb5\",\"assigned_to\":null,\"assigned_to_id\":null,\"form_values\":{\"628b\":\"undefined\",\"91b1\":{\"other_values\":[],\"choice_values\":[\"barrijtuig\"]},\"8747\":\"yes\",\"9c9c\":\"no\",\"2473\":\"yes\",\"d24f\":\"yes\",\"180f\":\"yes\",\"efac\":\"yes\",\"e12f\":\"no\",\"7e66\":\"yes\",\"89a0\":\"yes\",\"2ba3\":\"no\",\"a3ab\":\"yes\",\"889b\":\"no\",\"bbb9\":\"yes\",\"1ed0\":\"no\"},\"latitude\":51.9903052,\"longitude\":5.8957381,\"altitude\":null,\"speed\":null,\"course\":null,\"horizontal_accuracy\":193.601,\"vertical_accuracy\":null},{\"status\":null,\"version\":1,\"id\":\"d5628f2a-36cb-46b6-b325-dfc3b832d3a3\",\"created_at\":\"2016-01-15T11:21:08Z\",\"updated_at\":\"2016-01-15T11:21:08Z\",\"client_created_at\":\"2016-01-15T11:21:08Z\",\"client_updated_at\":\"2016-01-15T11:21:08Z\",\"created_by\":\"Gé-Jé Overschie\",\"created_by_id\":\"4b26d246-0e3e-4453-9ea3-f087952b3340\",\"updated_by\":\"Gé-Jé Overschie\",\"updated_by_id\":\"4b26d246-0e3e-4453-9ea3-f087952b3340\",\"form_id\":\"03e616bd-d6e6-4973-84e3-a3ed805407e3\",\"project_id\":null,\"assigned_to\":null,\"assigned_to_id\":null,\"form_values\":{\"628b\":\"undefined\"},\"latitude\":null,\"longitude\":null,\"altitude\":null,\"speed\":null,\"course\":null,\"horizontal_accuracy\":null,\"vertical_accuracy\":null}],\"current_page\":1,\"total_pages\":1,\"total_count\":4,\"per_page\":20000}",
+      "headers": {
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "Content-Type": "application/json; charset=utf-8",
+        "Date": "Fri, 12 Feb 2016 15:21:51 GMT",
+        "ETag": "W/\"dd4753c8d41d964e813b638373cee202\"",
+        "Server": "nginx",
+        "Status": "200 OK",
+        "Vary": "Accept-Encoding, Accept, Authorization, Cookie, X-ApiToken",
+        "X-Request-Id": "0172a6ce-e290-46ef-b3ec-2a12066f44c2",
+        "X-Runtime": "0.061792",
+        "X-Served-By": "ff111a54de53d7a9bb57f3d20db99f5a5e19dd1c",
+        "X-Served-By-Proxy": "ff111a54de53d7a9bb57f3d20db99f5a5e19dd1c",
+        "X-Served-By-Proxy-Group": "main",
+        "Content-Length": "3476",
+        "Connection": "keep-alive"
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  }
+]

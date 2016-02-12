@@ -10,13 +10,28 @@ defmodule Fulcrum do
       You can pass in a user's api_key, to filter by the objects to
       which the user is authorized.
   ## Example
-    form = Fulcrum.all(Form)
-    form = Fulcrum.all(Form)
+    forms = Fulcrum.all(Form)
+    forms = Fulcrum.all(Form)
   """
   def all(model, opts \\ []) do
     resource = resource_name(model)
     path = "#{resource_path(resource)}.json"
     {:ok, response} = HTTPoison.get endpoint <> path, headers(opts)
+    to_model(response, model, pluralize(resource))
+  end
+
+  @doc """
+  Like all/2, but with extra query params.
+  The params are passed on as query params to Fulcrum,
+  without any checks or limitations.
+  http://developer.fulcrumapp.com/endpoints/records/#query-parameters
+  ## Example
+    records = Fulcrum.all(Record, [form_id: "<some id>"])
+  """
+  def all_by!(model, params, opts \\ []) do
+    resource = resource_name(model)
+    path = "#{resource_path(resource)}.json"
+    {:ok, response} = HTTPoison.get endpoint <> path, headers(opts), params: params
     to_model(response, model, pluralize(resource))
   end
 
@@ -122,9 +137,13 @@ defmodule Fulcrum do
   end
 
   defp to_model(response, model, resource) do
-    Poison.Parser.parse!(response.body)[resource]
-    |> atomize
-    |> to_model(model)
+    case String.strip(response.body) do
+      "" -> nil
+      body ->
+        Poison.Parser.parse!(body)[resource]
+        |> atomize
+        |> to_model(model)
+    end
   end
 
   defp to_model(list, model) when is_list(list) and is_atom(model) do
