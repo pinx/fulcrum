@@ -33,4 +33,14 @@ defmodule Fulcrum.RecordTest do
       assert record.form_id == "03e616bd-d6e6-4973-84e3-a3ed805407e3"
     end
   end
+
+  test "all_by!/2" do
+    use_cassette "records#all_by" do
+      form_id = "03e616bd-d6e6-4973-84e3-a3ed805407e3"
+      records = Fulcrum.all_by!(Record, [form_id: form_id])
+      assert length(records) > 1
+      assert List.first(records).form_id == form_id
+    end
+  end
+
 end
