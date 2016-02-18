@@ -12,6 +12,7 @@ defmodule Fulcrum.Form do
     record_count: 0,
     created_at: nil,
     updated_at: nil,
+    memberships: nil,
     image: nil,
     image_thumbnail: nil,
     image_small: nil,

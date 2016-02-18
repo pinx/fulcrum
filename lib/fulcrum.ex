@@ -73,11 +73,16 @@ defmodule Fulcrum do
     form = Fulcrum.insert!(%Form{id: "<UUID from Fulcrum>", ...}, [api_key: "<api_key>"])
   """
   def insert!(model, opts \\ []) do
-    resource = resource_name(model)
-    path = "#{resource_path(resource)}.json"
-    body = to_json(model)
-    {:ok, response} = HTTPoison.post endpoint <> path, body, headers(opts)
-    to_model(response, model, resource)
+    case model.__struct__ do
+      Fulcrum.FormMembership ->
+        insert_form_membership(model, opts)
+      _ ->
+        resource = resource_name(model)
+        path = "#{resource_path(resource)}.json"
+        body = to_json(model)
+        {:ok, response} = HTTPoison.post endpoint <> path, body, headers(opts)
+        to_model(response, model, resource)
+    end
   end
 
   @doc """
@@ -136,22 +141,44 @@ defmodule Fulcrum do
     "{\"#{resource_name(model)}\":#{Poison.encode!(model)}}"
   end
 
+  # Fulcrum has a peculiar way of handling this endpoint
+  defp insert_form_membership(model, opts \\ []) do
+    %{form_id: form_id, membership_id: membership_id} = model
+    path = "/memberships/change_permissions"
+    instruction = %{change: %{type: "form_members", form_id: form_id, add: [membership_id]}}
+    body = Poison.encode!(instruction)
+    {:ok, response} = HTTPoison.post endpoint <> path, body, headers(opts)
+    to_model(response, Fulcrum.Membership, "memberships")
+  end
+
   defp to_model(response, model, resource) do
-    case String.strip(response.body) do
-      "" -> nil
-      body ->
+    body = response.body
+    case response.status_code do
+      s when s in 200..399 ->
         Poison.Parser.parse!(body)[resource]
         |> atomize
         |> to_model(model)
+      s when s in 400..999 ->
+        Poison.Parser.parse!(body)[resource]
+        |> Map.fetch!("errors")
+        |> Map.fetch!("base")
+        |> Enum.join(", ")
+        |> raise
     end
   end
-
   defp to_model(list, model) when is_list(list) and is_atom(model) do
     for item <- list, into: [], do: to_model(item, model)
   end
+  defp to_model(map, model) when is_map(map), do: struct(model, map)
 
-  defp to_model(map, model) when is_map(map) do
-    struct(model, map)
+  defp to_error(response, resource) do
+    failed_result = Poison.Parser.parse!(response.body)[resource]
+    case failed_result do
+      nil ->
+        raise response.status
+      result ->
+        raise Enum.join(result["errors"]["base"], ", ")
+    end
   end
 
   defp resource_path(resource) do

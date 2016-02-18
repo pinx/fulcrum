@@ -1,0 +1,38 @@
+[
+  {
+    "request": {
+      "body": "{\"change\":{\"type\":\"form_members\",\"form_id\":\"50902d3b-f79a-447c-8327-622d9d354e3e\",\"add\":[\"9ba3dea3-8edb-4137-92dd-f27d12adfc76\"]}}",
+      "headers": {
+        "Content-Type": "application/json; charset=utf-8",
+        "Accept": "application/json",
+        "User-Agent": "Elixir Client",
+        "X-ApiToken": "FULCRUM_API_KEY"
+      },
+      "method": "post",
+      "options": [],
+      "request_body": "",
+      "url": "https://api.fulcrumapp.com/api/v2/memberships/change_permissions"
+    },
+    "response": {
+      "body": "{\"memberships\":[{\"id\":\"9ba3dea3-8edb-4137-92dd-f27d12adfc76\",\"created_at\":\"2016-01-08T08:53:54Z\",\"updated_at\":\"2016-01-08T08:54:57Z\",\"gravatar_email\":\"Marcel.van.pinxteren@gmail.com\",\"gravatar_image_url\":\"https://s.gravatar.com/avatar/a580baa8965eb2e353491f34eec98a98?s=80&d=https://api.fulcrumapp.com/images/user.png\",\"user_id\":\"5a3c43a0-afb0-4bb3-bec3-c4c79d43a3d6\",\"user\":\"Marcel van Pinxteren\",\"email\":\"marcel.van.pinxteren@gmail.com\",\"role_id\":\"3b6a4728-7cda-4ebd-8be4-950317b9cde8\"}],\"current_page\":1,\"total_pages\":1,\"total_count\":1,\"per_page\":1000}",
+      "headers": {
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "Content-Type": "application/json; charset=utf-8",
+        "Date": "Mon, 15 Feb 2016 13:47:41 GMT",
+        "ETag": "W/\"69e64d406aca96dd1b58e9fc19588f25\"",
+        "Server": "nginx",
+        "Status": "200 OK",
+        "Vary": "Accept-Encoding, Accept, Authorization, Cookie, X-ApiToken",
+        "X-Request-Id": "a5196b99-4a6c-430e-992f-89bc8e687e83",
+        "X-Runtime": "0.067506",
+        "X-Served-By": "ff111a54de53d7a9bb57f3d20db99f5a5e19dd1c",
+        "X-Served-By-Proxy": "ff111a54de53d7a9bb57f3d20db99f5a5e19dd1c",
+        "X-Served-By-Proxy-Group": "main",
+        "Content-Length": "555",
+        "Connection": "keep-alive"
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  }
+]

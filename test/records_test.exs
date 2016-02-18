@@ -23,6 +23,15 @@ defmodule Fulcrum.RecordTest do
     end
   end
 
+  test "insert invalid" do
+    use_cassette "records#insert_invalid" do
+      record = %Record{
+        form_id: "03e616bd-d6e6-4973-84e3-a3ed805407e3"
+      }
+      assert_raise RuntimeError, fn -> Fulcrum.insert!(record) end
+    end
+  end
+
   test "insert!/1" do
     use_cassette "records#insert" do
       record = %Record{
