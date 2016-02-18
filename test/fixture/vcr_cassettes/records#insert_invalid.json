@@ -1,0 +1,37 @@
+[
+  {
+    "request": {
+      "body": "{\"record\":{\"vertical_accuracy\":null,\"version\":null,\"updated_by_id\":null,\"updated_by\":null,\"updated_at\":null,\"status\":null,\"speed\":null,\"project_id\":null,\"longitude\":null,\"latitude\":null,\"id\":null,\"horizontal_accuracy\":null,\"form_values\":null,\"form_id\":\"03e616bd-d6e6-4973-84e3-a3ed805407e3\",\"created_by_id\":null,\"created_by\":null,\"created_at\":null,\"course\":null,\"client_updated_at\":null,\"client_created_at\":null,\"assigned_to_id\":null,\"assigned_to\":null,\"altitude\":null}}",
+      "headers": {
+        "Content-Type": "application/json; charset=utf-8",
+        "Accept": "application/json",
+        "User-Agent": "Elixir Client",
+        "X-ApiToken": "FULCRUM_API_KEY"
+      },
+      "method": "post",
+      "options": [],
+      "request_body": "",
+      "url": "https://api.fulcrumapp.com/api/v2/records.json"
+    },
+    "response": {
+      "body": "{\"record\":{\"errors\":{\"base\":[\"form_values must exist\"]}}}",
+      "headers": {
+        "Cache-Control": "no-cache",
+        "Content-Type": "application/json; charset=utf-8",
+        "Date": "Fri, 12 Feb 2016 19:14:21 GMT",
+        "Server": "nginx",
+        "Status": "422 Unprocessable Entity",
+        "Vary": "Accept-Encoding, Accept, Authorization, Cookie, X-ApiToken",
+        "X-Request-Id": "7f9051d5-c6b4-4eb4-a97e-3188e243a26d",
+        "X-Runtime": "0.034902",
+        "X-Served-By": "ff111a54de53d7a9bb57f3d20db99f5a5e19dd1c",
+        "X-Served-By-Proxy": "ff111a54de53d7a9bb57f3d20db99f5a5e19dd1c",
+        "X-Served-By-Proxy-Group": "main",
+        "Content-Length": "57",
+        "Connection": "keep-alive"
+      },
+      "status_code": 422,
+      "type": "ok"
+    }
+  }
+]
